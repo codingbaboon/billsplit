@@ -1,0 +1,23 @@
+Bill Split Notes
+
+When Checkbox is Clicked
+-get the item it's associated with
+-if checkbox is checked, then change index of owner to 1 in the item object
+== +1 to owner total
+-if checkbox is unchecked, then change the index of owner to 0 in the item object
+== -1 to owner total
+
+Calculate()
+-do (price/ownersClaimed) to get the total for each claimed person
+-iterate through items object array
+==look at the item Objects 'claimed' attrbute [0,0,1,0,1]
+*** every time there is a 1:
+==> push the item name onto the Owner object's "claimed items" array (secondary)
+==> add the subtotal to the Owner objects 'total' attribute
+
+
+Add a discount function
+
+    
+
+
