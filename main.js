@@ -195,13 +195,23 @@ function addItem() {
     newSpan.className = "item-price";
     //create the owner options section
     const newOwnersDiv = makeOwnerSection();
+    //creates the 'select all' button
+    const newSelectAllButton = makeSelectAllButton(itemID);
     //add all new elements to to the webpage
     newDiv.appendChild(newH4);
     newDiv.appendChild(newInput);
     newDiv.appendChild(newSpan);
     newDiv.appendChild(newOwnersDiv);
+    newDiv.appendChild(newSelectAllButton);
     const addItemButton = document.getElementById("add-item-button")
     document.body.insertBefore(newDiv, addItemButton);
+}
+function makeSelectAllButton(itemID){
+    const newButton = document.createElement("button");
+    newButton.className = "selectAllButton";
+    newButton.id = "select-all-button" + itemID;
+    newButton.textContent = "Select All";
+    return newButton;
 }
 
 function makeOwnerSection() {
@@ -311,6 +321,11 @@ function displaySummary() {
     }
     document.getElementById("summary-wrapper").innerHTML = "";
     document.getElementById("summary-wrapper").appendChild(newWrapperDiv);
+}
+
+/*Selects all owners for the item*/
+function selectAll(){
+
 }
 
 
